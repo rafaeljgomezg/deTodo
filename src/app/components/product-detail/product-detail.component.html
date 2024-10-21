@@ -1,0 +1,22 @@
+<h2 class="title">Detalle del Producto</h2>
+<div class="content">
+    <figure class="content__image">
+        <img src="{{product?.images}}" alt="{{product?.title}}">
+    </figure>
+
+    <div class="content__caracteristicas">
+        <div class="content__title">{{product?.title}}</div>
+        <div class="content__descrip">{{product?.description}}</div>
+        <div class="content_price"><strong>Price</strong>: {{product?.price | currency}}</div>
+        <div class="content__buy">
+            @if (product) {
+                <div class="content__buy--tocart" (click)="addToCart(product)">Add-To-Cart</div>
+            }
+            <div class="content__buy--return" [routerLink]="['/products']" routerLinkActive="router-link-active" >Regresar</div>
+        </div>
+
+    </div>
+
+</div>
+
+

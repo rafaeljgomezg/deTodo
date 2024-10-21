@@ -1,0 +1,66 @@
+<h1>Formularios en Angular</h1>
+
+<mat-divider></mat-divider>
+
+
+<form [formGroup]="form()" (ngSubmit)="enviar()">
+
+    <mat-form-field>
+        <mat-label>Empresa: </mat-label>
+        <input matInput type="text" name="empresa" id="empresa" formControlName="empresa" placeholder="Nombre de la Empresa">
+    </mat-form-field>
+
+
+    <label for="telefono">
+        Telefono
+        <input type="tel" name="telefono" id="telefono" formControlName="tel" placeholder="+51  XXX XXX XXX">
+    </label>
+
+    <label for="email">
+        Correo Electrónico
+        <input type="email" name="email" id="email" formControlName="email" placeholder="email@dominio.com">
+    </label>
+
+    <label for="pagweb">
+        Página WEB
+        <input type="url" name="pagweb" id="pagweb" formControlName="pagweb" placeholder="www.dominio.com">
+    </label>
+
+    <label for="actividad">
+        Sector de Actividad
+        <select name="actividad" id="actividad" formControlName="actividad">
+            <option value="">Seleccione una Actividad</option>
+            <option value="comercio">Comercio</option>
+            <option value="servicios">Servicios</option>
+            <option value="industria">Industria</option>
+            <option value="otro">Otro</option>
+        </select>
+    </label>
+
+    <label for="lenguajes" >
+        Lenguajes de Programacion
+        <select multiple name="lenguajes" id="lenguajes" formControlName="lenguajes">
+            <option value="python">Python</option>
+            <option value="javascript">JavaScript</option>
+            <option value="java">Java</option>
+            <option value="c#">C#</option>
+            <option value="php">PHP</option>
+        </select>
+    </label>
+
+    <label for="numempleados">
+        Numero de Empleados
+        <input type="number" min="1" max="10" id="numempleados" name="numempleados" formControlName="numempleados">
+    </label>
+
+    <button type="submit" [disabled]="!form().valid">Guardar</button>
+
+</form>
+
+<mat-divider></mat-divider>
+
+<h2>VALORES</h2>
+
+<pre>
+    {{form().value | json}}
+</pre>

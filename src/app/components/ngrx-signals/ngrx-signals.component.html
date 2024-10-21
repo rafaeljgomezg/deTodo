@@ -1,0 +1,20 @@
+<div class="container">
+  <h2>{{title}}</h2>
+  <p>Tasks: {{ store.visibleTasks().length }}</p>
+  @for( task of store.visibleTasks(); track task.id) {
+    <li>{{ task.title }}</li>
+  }
+
+  <hr>
+
+  <div role="group" aria-label="Filtro de tareas" class="group">
+    <button class="btn group-btn-1" (click)="store.changeFilter('pending')">Pending</button>
+    <button class="btn group-btn-2" (click)="store.changeFilter('all')">All</button>
+    <button class="btn group-btn-3" (click)="store.changeFilter('done')">Done</button>
+  </div>
+</div>
+
+
+<input type="text" [(ngModel)]="store.tasks()[0].title">
+<br>
+<pre>{{store.tasks()[0] | json}}</pre>

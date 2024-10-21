@@ -1,0 +1,69 @@
+.title {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.content {
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 50%;
+    margin: 0 auto;
+    background-color: grayscale($color: #f7f7f7);
+    box-shadow: 1rem 1rem 1rem .2rem rgba(black, .5);
+
+    &__caracteristicas {
+        display: flex;
+        flex-direction: column;
+
+        & > * {
+            padding: 1rem 0;
+
+        }
+
+    }
+
+    &__image {
+        max-width: 45rem;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 1.8rem;
+    }
+
+
+    &__buy {
+        margin: 2rem;
+        display: flex;
+        justify-content: space-between;
+        
+        & > * {
+            padding: 1rem 2rem;
+            background-color: #ccc;
+            cursor: pointer;
+            box-shadow: 0 1rem 1rem .2rem rgba(black, .1);
+
+            transition: transform .2s;
+
+            &:active {
+                transform: translateY(.2rem);
+            }
+
+            &:hover {
+                background-color: orangered;
+                color: white;
+                font-weight: 500;
+            }
+        }
+    }
+
+}
+
+.spacer {
+    flex: 1;
+}

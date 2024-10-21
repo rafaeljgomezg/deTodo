@@ -1,0 +1,66 @@
+.content {
+    max-width: 85%;
+    margin: 0 auto;
+    background-color: #ccc;
+    min-height: 100vh;
+    box-shadow: 0 1rem 3rem .5rem rgba(black, .5);
+
+    
+    &__title {
+        text-align: center;
+    }
+
+    &__box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+
+        //display: grid;
+        //grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+        padding: 2rem 1rem;
+        //gap: 1rem;
+    
+        &-card {
+            width: 20rem;
+            margin: 1rem;
+            &--header {
+                padding: 1rem .5rem;
+            }
+
+            &--content{
+                margin-bottom: 1rem;
+            }
+
+
+            &--description {
+                padding: 1rem .5rem;
+                display: -webkit-box;
+                -webkit-line-clamp: 3; /* Limita a 3 líneas */
+                line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                height: calc(1.6em * 2); /* Ajusta la altura según el número de líneas */
+            }
+
+            &--actions {
+                display: flex;
+                justify-content: space-evenly;
+            }
+
+        }
+    }
+}
+
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+mat-divider {
+    width: 95%;
+    margin: 0 auto;
+}
+
+
