@@ -80,13 +80,11 @@ export const ProductsStore = signalStore(
       },
 
       removeFromCart: (product: Product) => {
-        console.log(product.id)
+        console.log('El ID es: ',product.id)
         const id=product.id;
         const currentCart = store.cart();
         // Actualizamos el carrito, eliminando productos con cantidad 0
         const updatedCart = currentCart.reduce((acc, item) => {
-          
-          console.log('Comparando:', item.product.id, 'con', id);
 
           if (String(item.product.id) == String(product.id)) {
             //console.log('original', item.quantity)
@@ -96,9 +94,6 @@ export const ProductsStore = signalStore(
               // Si la cantidad es mayor a 0, actualizamos el producto con la nueva cantidad
               acc.push({ ...item, quantity: newQuantity });
               //console.log(' La nueva cantidad es ', newQuantity)
-            } else {
-              // Producto eliminado, ya no se agrega al carrito
-              console.log(`Product ${item.product.title} removed from cart (quantity reached 0)`);
             }
           } else {
             // Mantén los productos que no se están eliminando
@@ -106,15 +101,13 @@ export const ProductsStore = signalStore(
           }
           return acc;
         }, [] as CartItem[]);
-      
+
         // Calculamos el total actualizado
-        const total = updatedCart.reduce(
-          (acc, item) => acc + item.product.price * item.quantity, 0
-        );
-      
+        const total = updatedCart.reduce((acc, item) => acc + item.product.price * item.quantity, 0);
+
         // Actualizamos el estado del carrito con el nuevo array y total
         patchState(store, { cart: updatedCart, total });
-      
+
         //console.log("Updated cart:", updatedCart);
       },
 

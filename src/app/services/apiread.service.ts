@@ -11,16 +11,16 @@ export class ApireadService {
 
   private http = inject(HttpClient);
   API_URL = 'https://api.escuelajs.co/api/v1/products';
-  
+
   lista_productos!:Product[]
-  
-  
+
+
   getAll(): Observable<Product[]> {
     return this.http.get<Product[]>(this.API_URL)
   }
 
   getById(id:number):Observable<Product> {
-    return this.http.get<Product>(`${this.API_URL}/${id}`);
+    return  this.http.get<Product>(`${this.API_URL}/${id}`);
   }
 
 }

@@ -51,7 +51,7 @@ export class ApireadObservableComponent {
     });*/
 
     //console.log(this.store.cart())
-    
+
     //this.store.getById(10)
     //console.log(this.store.product())
 

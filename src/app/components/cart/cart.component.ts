@@ -28,8 +28,8 @@ export class CartComponent {
   totalQuantity = this.store.getTotalQuantity();
 
   ngOnInit(): void {
-    
-    
+
+
   }
 
   removeFromCart(product: Product) {

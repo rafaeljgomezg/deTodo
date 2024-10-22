@@ -7,8 +7,8 @@
     filter: brightness(1);
     font-weight: 600;
   }
-  
- 
+
+
 
   &__svg {
     display: block;
@@ -45,11 +45,13 @@
       border-radius: 50%;
       z-index: -1;
       transform: translateX(-0.4rem) translateY(-4px);
-      
+
     }
   }
 }
 .content {
+  min-width: 35rem;
+
   position: fixed;
   //display: none;
   font-size: .8rem;
@@ -84,4 +86,9 @@
   min-width: 300px; /* Asegura un ancho mínimo */
   max-width: 400px; /* Puedes también poner un límite máximo si quieres */
   word-wrap: break-word; /* Asegura que el texto se ajuste */
+}
+
+i {
+  outline: none;
+  cursor: pointer;
 }
